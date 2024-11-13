@@ -1,0 +1,161 @@
+/* Task Manager CSS
+
+.task-manager {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .filter-buttons button {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .filter-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .task-input {
+    margin-bottom: 20px;
+  }
+  
+  .task-input input,
+  .task-input select,
+  .task-input button {
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .task-input input,
+  .task-input select {
+    width: 200px;
+  }
+  
+  .task-input button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .task-input button:hover {
+    background-color: #218838;
+  }
+  
+  .task-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .task-item {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .task-info {
+    max-width: 70%;
+  }
+  
+  .task-actions button {
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .task-actions button:nth-child(1) {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .task-actions button:nth-child(1):hover {
+    background-color: #0056b3;
+  }
+  
+  .task-actions button:nth-child(2) {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .task-actions button:nth-child(2):hover {
+    background-color: #e0a800;
+  }
+  
+  .task-actions button:nth-child(3) {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .task-actions button:nth-child(3):hover {
+    background-color: #c82333;
+  }
+  
+  .edit-task-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .edit-task-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .edit-task-form h2 {
+    margin-bottom: 10px;
+  }
+  
+  .edit-task-form input,
+  .edit-task-form textarea,
+  .edit-task-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .edit-task-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .edit-task-form button:hover {
+    background-color: #0056b3;
+  }
+   */
+
+   @tailwind base;
+@tailwind components;
+@tailwind utilities;
