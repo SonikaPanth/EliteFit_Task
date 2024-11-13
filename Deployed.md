@@ -2,5 +2,5 @@
 
 Check out the live version of the application :
 
-👉 [Elite Fit Task Manager](elite-fit-task-ten.vercel.app)
+👉You can access the live application here: [Elite Fit Task](https://elite-fit-task-ten.vercel.app)
 
