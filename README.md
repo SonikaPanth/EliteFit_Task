@@ -52,5 +52,13 @@ Follow these steps to set up the project locally on your machine.
 Screenshot 1
 ![Screenshot (168)](https://github.com/user-attachments/assets/1828a404-7f60-44a2-8f22-1c26c8828ae7)
 
+screenshot 2
+![Screenshot (169)](https://github.com/user-attachments/assets/fdbf03b4-c238-4277-8116-b3bd31e0b6f4)
+
+screenshot 3
+![Screenshot (170)](https://github.com/user-attachments/assets/8291d8fa-4661-46f8-aa55-6a8e517a2a47)
+
+
+
 
 
