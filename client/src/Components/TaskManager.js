@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+
+import { useState, useEffect, useDeferredValue } from 'react';
+
 import Navbar from './Navbar';
 
 function TaskManager() {
@@ -7,6 +9,7 @@ function TaskManager() {
   );
   const [filter, setFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const deferredSearchQuery = useDeferredValue(searchQuery);
   const [priorityFilter, setPriorityFilter] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
   const [newTask, setNewTask] = useState({
@@ -85,42 +88,82 @@ function TaskManager() {
     });
   }
 
+  // // Function to filter tasks based on selected filters
+  // function filterTasks() {
+  //   let filtered = tasks;
+
+  //   // Search filter
+  //   if (searchQuery) {
+  //     filtered = filtered.filter(
+  //       (task) =>
+  //         task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  //         task.description.toLowerCase().includes(searchQuery.toLowerCase())
+  //     );
+  //   }
+
+  //   // Priority filter
+  //   if (priorityFilter) {
+  //     filtered = filtered.filter((task) => task.priority === priorityFilter);
+  //   }
+
+  //   // Status filter (Completed or Pending)
+  //   if (statusFilter === 'completed') {
+  //     filtered = filtered.filter((task) => task.isCompleted);
+  //   } else if (statusFilter === 'pending') {
+  //     filtered = filtered.filter((task) => !task.isCompleted);
+  //   }
+
+  //   // Date filter (Upcoming, Overdue, All)
+  //   if (filter === 'upcoming') {
+  //     filtered = filtered.filter((task) => new Date(task.dueDate) > new Date());
+  //   } else if (filter === 'overdue') {
+  //     filtered = filtered.filter((task) => new Date(task.dueDate) < new Date() && !task.isCompleted);
+  //   } else if (filter === 'completed') {
+  //     filtered = filtered.filter((task) => task.isCompleted);
+  //   }
+
+  //   return filtered;
+  // }
+
   // Function to filter tasks based on selected filters
-  function filterTasks() {
-    let filtered = tasks;
+function filterTasks() {
+  let filtered = tasks;
 
-    // Search filter
-    if (searchQuery) {
-      filtered = filtered.filter(
-        (task) =>
-          task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          task.description.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }
-
-    // Priority filter
-    if (priorityFilter) {
-      filtered = filtered.filter((task) => task.priority === priorityFilter);
-    }
-
-    // Status filter (Completed or Pending)
-    if (statusFilter === 'completed') {
-      filtered = filtered.filter((task) => task.isCompleted);
-    } else if (statusFilter === 'pending') {
-      filtered = filtered.filter((task) => !task.isCompleted);
-    }
-
-    // Date filter (Upcoming, Overdue, All)
-    if (filter === 'upcoming') {
-      filtered = filtered.filter((task) => new Date(task.dueDate) > new Date());
-    } else if (filter === 'overdue') {
-      filtered = filtered.filter((task) => new Date(task.dueDate) < new Date() && !task.isCompleted);
-    } else if (filter === 'completed') {
-      filtered = filtered.filter((task) => task.isCompleted);
-    }
-
-    return filtered;
+  // Search filter using deferred value
+  if (deferredSearchQuery) {
+    filtered = filtered.filter(
+      (task) =>
+        task.title.toLowerCase().includes(deferredSearchQuery.toLowerCase()) ||
+        task.description.toLowerCase().includes(deferredSearchQuery.toLowerCase())
+    );
   }
+
+  // Priority filter
+  if (priorityFilter) {
+    filtered = filtered.filter((task) => task.priority === priorityFilter);
+  }
+
+  // Status filter (Completed or Pending)
+  if (statusFilter === 'completed') {
+    filtered = filtered.filter((task) => task.isCompleted);
+  } else if (statusFilter === 'pending') {
+    filtered = filtered.filter((task) => !task.isCompleted);
+  }
+
+  // Date filter (Upcoming, Overdue, All)
+  if (filter === 'upcoming') {
+    filtered = filtered.filter((task) => new Date(task.dueDate) > new Date());
+  } else if (filter === 'overdue') {
+    filtered = filtered.filter(
+      (task) => new Date(task.dueDate) < new Date() && !task.isCompleted
+    );
+  } else if (filter === 'completed') {
+    filtered = filtered.filter((task) => task.isCompleted);
+  }
+
+  return filtered;
+}
+
 
   // Get the filtered tasks
   const filteredTasks = filterTasks();
