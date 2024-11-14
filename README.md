@@ -1,5 +1,8 @@
 # Task Manager
 
+👉You can access the live application here: [Elite Fit Task](https://elite-fit-task-ten.vercel.app)
+
+
 ## Overview
 
 The **Task Manager** application is a web-based tool for managing personal tasks effectively. Built using **React** and **Tailwind CSS**, this application provides an intuitive user interface for users to create, edit, filter, and track tasks based on priority and completion status. It leverages **localStorage** to persist task data, ensuring user information is retained even after page refresh.
